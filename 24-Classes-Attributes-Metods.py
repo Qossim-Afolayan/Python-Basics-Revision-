@@ -103,3 +103,85 @@ book.rip_in_half()
 print(book.page_count)
 
 # Defining properties with property method
+class Height():
+    def __init__(self, feet):
+        self._inches = feet * 12
+
+    def _get_feet(self):
+        return self._inches / 12
+
+    def _set_feet(self, feet):
+        if feet >= 0:
+            self._inches = feet * 12
+    
+    feet = property(_get_feet, _set_feet)
+
+h = Height(5)
+print(h.feet)
+
+h.feet = 6
+print(h.feet)
+
+h.feet = -10
+print(h.feet)
+
+#Defining Properties with Decorators
+class Currency():
+    def __init__(self, dollars):
+        self._cents = dollars * 100
+
+    @property
+    def dollars(self):
+        return self._cents / 100
+
+    @dollars.setter
+    def dollars(self, dollars):
+        if dollars >= 0:
+            self._cents = dollars * 100
+
+h = Currency(10000)
+print(h.dollars)
+
+h.dollars = 500000
+print(h.dollars)
+
+h.dollars = -10000
+print(h.dollars)
+
+
+#Exercise 2
+class PizzaPie():
+    def __init__(self, total_slices):
+        self.total_slices = total_slices
+        self._slices_eaten = 0
+
+    @property
+    def slices_eaten(self):
+        return self._slices_eaten
+
+    @slices_eaten.setter
+    def slices_eaten(self, slices_eaten):
+        if slices_eaten < self.total_slices:
+            self._slices_eaten = slices_eaten
+
+    @property
+    def percentage(self):
+        return self._slices_eaten / self.total_slices
+
+cheese = PizzaPie(8)
+cheese.slices_eaten = 2
+print(cheese.percentage)
+
+cheese.slices_eaten = 4
+print(cheese.slices_eaten)
+
+cheese.slices_eaten  = 10
+print(cheese.percentage)
+
+# cheese.percentage = 0.5 
+# print(cheese.percentage)
+
+#
+
+
+
