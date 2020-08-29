@@ -181,7 +181,45 @@ print(cheese.percentage)
 # cheese.percentage = 0.5 
 # print(cheese.percentage)
 
-#
+#The geattr and the setattr Functions
+stats = {
+    "name": "BBQ Chicken",
+    "size": "Extra Large",
+    "price": 19.99,
+    "ingredients": ["Chicken", "Onions", "BBQ Sauce"]
+    }
 
+class Pizza():
+    def __init__(self, stats):
+        for key, value in stats.items():
+            setattr(self, key, value)
+bbq = Pizza(stats)
+print(bbq.size)
+print(bbq.ingredients)
+
+for attr in  ["name", "ingredients", "diameter", "discounted"]:
+    print(getattr( bbq, attr, "Unknown"))
+
+#The hasattr and delattr Functions
+stats = {
+    "name": "BBQ Chicken",
+    "size": "Extra Large",
+    "price": 19.99,
+    "ingredients": ["Chicken", "Onions", "BBQ Sauce"]
+    }
+
+class Pizza():
+    def __init__(self, stats):
+        for key, value in stats.items():
+            setattr(self, key, value)
+bbq = Pizza(stats)
+print(bbq.size)
+stats_to_delete = ["size", "diameter", "discounted", "ingredients"]
+
+for stat in stats_to_delete:
+    if hasattr(bbq, stat):
+        delattr(bbq, stat)
+
+# print(bbq.size)
 
 
