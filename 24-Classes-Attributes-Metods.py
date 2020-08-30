@@ -295,6 +295,41 @@ class Chocolate():
 print(Chocolate.bitter().cocoa_content)
 print(Chocolate.bittersweet().cocoa_content)
 
+#Class Attributes 
+class Counter():
+    count = 0
+    def __init__(self):
+        Counter.count += 1
 
+    @classmethod
+    def create_two(cls):
+        two_counter = (cls(), cls())
+        print(f"New Numnber of objects created: {cls.count}")
+        return two_counter
 
+print(Counter.count)
+c1 = Counter()
+print(Counter.count)
 
+c2, c3 = Counter.create_two()
+print(Counter.count)
+
+print(c1.count)
+print(c2.count)
+print(c3.count)
+
+#Attribute lookup order
+class Example():
+    data = "Class Attribute!"
+
+e1 = Example()
+e2 = Example()
+
+print(e1.data)
+print(e2.data)
+
+e1.data = "Instance Attribute!"
+print(e1.data)
+print(e2.data)
+
+#print(e1.nonsense)
