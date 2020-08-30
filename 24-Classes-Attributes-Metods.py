@@ -68,6 +68,11 @@ print(iphone._company)
 iphone.update_firmware()
 print(iphone._firmware)
 
+#practice
+print(iphone._firmware)
+samsung = Smartphone()
+print(samsung._firmware)
+
 #Exercise 2
 class Book():
     def __init__(self, author, publisher, page_count):
@@ -220,6 +225,76 @@ for stat in stats_to_delete:
     if hasattr(bbq, stat):
         delattr(bbq, stat)
 
-# print(bbq.size)
+#print(bbq.size)
+print(bbq.price)
+#Class Method
+class SushiPlatter():
+    def __init__(self, salmon, tuna, shrimp, squid):
+        self.salmon = salmon
+        self.tuna = tuna
+        self.shrimp = shrimp
+        self.squid = squid
+
+    @classmethod
+    def lunch_special_A(cls):
+        return cls(salmon = 0, tuna = 2, shrimp = 3, squid = 0)
+
+    @classmethod
+    def tuna_lover(cls):
+        return cls(salmon = 1, tuna = 10, shrimp = 0, squid = 1)
+
+boris = SushiPlatter(salmon = 0, tuna = 4, shrimp = 5, squid= 10)
+print(boris.salmon)
+print(boris.shrimp)
+
+print(SushiPlatter.lunch_special_A().tuna)
+print(SushiPlatter.tuna_lover().tuna)
+
+class RicePlatter():
+    def __init__(self, rice, chicken, fish, plantain):
+        self.rice = rice
+        self.chicken = chicken
+        self.fish = fish
+        self.polantain = plantain
+
+    @classmethod
+    def fish_lover(cls):
+        return cls(rice = 5, chicken = 1, fish = 3, plantain = 1)
+
+    @classmethod
+    def chicken_lover(cls):
+        return cls(rice = 5, fish = 1, chicken = 3, plantain = 1)
+
+qossim = RicePlatter(rice = 6, chicken = 4, fish = 0, plantain = 1)
+print(qossim.chicken)
+
+fish_lover_A = RicePlatter.fish_lover()
+print(fish_lover_A.chicken)
+
+#Exercise
+class Chocolate():
+    def __init__(self, cocoa_content):
+        self.cocoa_content = cocoa_content
+
+    @classmethod
+    def sweet(cls):
+        return cls(cocoa_content = 30)
+
+    @classmethod
+    def semi_sweet(cls):
+        return cls(cocoa_content = 50)
+
+    @classmethod
+    def bittersweet(cls):
+        return cls(cocoa_content = 70)
+
+    @classmethod
+    def bitter(cls):
+        return cls(cocoa_content = 99)
+
+print(Chocolate.bitter().cocoa_content)
+print(Chocolate.bittersweet().cocoa_content)
+
+
 
 

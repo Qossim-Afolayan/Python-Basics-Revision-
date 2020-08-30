@@ -51,4 +51,4 @@ print("ABC", "DEF", end="\n")
 print("ABC", "DEF", end="@%^")
 
 
-print("ABC", "DEF", end="@%^", sep="#$")
+print("ABC", "DEF", end="@%^", sep= "!@")
