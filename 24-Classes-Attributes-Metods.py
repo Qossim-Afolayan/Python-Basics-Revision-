@@ -227,6 +227,23 @@ for stat in stats_to_delete:
 
 #print(bbq.size)
 print(bbq.price)
+class Coffee():
+    def __init__(self, cream, sugar, half_and_half):
+        self.cream = cream
+        self.sugar = sugar
+        self.half_and_half = half_and_half
+
+morning_joe = Coffee(True, False, True)
+for val in ["cream",
+    "pumpkin spice",
+    "cinnamon",
+    "sugar",
+    "half_and_half"]:
+    if hasattr(morning_joe, val):
+        setattr(morning_joe, val, not getattr(morning_joe,val))
+
+print(morning_joe.cream, morning_joe.sugar, morning_joe.half_and_half)
+
 #Class Method
 class SushiPlatter():
     def __init__(self, salmon, tuna, shrimp, squid):
@@ -333,3 +350,21 @@ print(e1.data)
 print(e2.data)
 
 #print(e1.nonsense)
+
+#Static method
+class WeatherForecast():
+    def __init__(self, temperatures):
+        self.temperatures = temperatures
+
+    @staticmethod
+    def convert_farh_to_cels(farh):
+        calculation = (5/9) * (farh - 32)
+        return round(calculation, 2)
+
+    def in_celsius(self):
+        return [self.convert_farh_to_cels(temp) for temp in self.temperatures]
+
+wf = WeatherForecast([100, 200, 300, 40, 50])
+print(wf.in_celsius())
+
+print(WeatherForecast.convert_farh_to_cels(100))
