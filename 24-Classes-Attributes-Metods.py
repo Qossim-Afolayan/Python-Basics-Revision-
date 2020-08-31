@@ -335,6 +335,20 @@ print(c1.count)
 print(c2.count)
 print(c3.count)
 
+class School():
+    count = 0
+    def __init__(self):
+        School.count += 1
+
+heritage = School()
+print(School.count)
+
+qossim, abdurahman = [School(), School()]
+print(School.count)
+
+print(qossim.count)
+print(heritage.count)
+
 #Attribute lookup order
 class Example():
     data = "Class Attribute!"

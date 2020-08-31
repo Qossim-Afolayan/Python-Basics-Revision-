@@ -52,3 +52,11 @@ print("ABC", "DEF", end="@%^")
 
 
 print("ABC", "DEF", end="@%^", sep= "!@")
+
+#Exercise 1
+print("I am a developer!")
+
+print("a ** b ** C")
+print("Peanut butter and", end = " ")
+print("jelly")
+
