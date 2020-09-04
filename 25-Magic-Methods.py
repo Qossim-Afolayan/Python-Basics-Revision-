@@ -125,5 +125,73 @@ print(boston1 == philly)
 print(boston1 == boston2)
 print(boston1 == boston3)
 
+#Truthiness with __bool__ method
+class Emotion():
+    def __init__(self, positivity, negativity):
+        self.positivity = positivity
+        self.negativity = negativity
+
+    def __bool__(self):
+        return self.positivity > self.negativity
+
+my_emotional_state = Emotion(positivity = 20, negativity = 40)
+if my_emotional_state:
+    print("This will not print because I have more negativity than positivity")
+
+my_emotional_state.positivity = 100
+if my_emotional_state:
+    print("This will print because I have more negativity than positivity")
+
+#The namedtuple Object
+import collections
+# Book = collections.namedtuple("Book", ["title", "author"])
+Book = collections.namedtuple("Book", "title author")
+
+animal_farm = Book("Animal Farm", "Geoge Orwell")
+gastby = Book(author = "F. Scott Fitzgerald", title = "The Great Gastby")
+
+print(animal_farm[0]) #tuple like
+print(animal_farm.title) #class type
+print(gastby.author)
+print(gastby[1])
+
+#Exercise
+GymExercise = collections.namedtuple("GymExercise", ["name", "weight", "reps"])
+squat = GymExercise("squat", 265, 3)
+
+bench = GymExercise("benchpress", 185, 5)
+
+deadlift = GymExercise("deadlift", 225, 6)
+
+press = GymExercise("press", 120, 8)
+
+print(press[2])
+print(bench.weight)
+print(deadlift[1])
+print(squat.name)
+
+Book = collections.namedtuple("Book", "title author")
+
+animal_farm = Book("Animal Farm", "Geoge Orwell")
+gastby = Book(author = "F. Scott Fitzgerald", title = "The Great Gastby")
+
+# word = "dynasty"
+# print(len(word))
+# print(word.__len__())
+
+class Library():
+    def __init__(self, *books):
+        self.books = books
+        self.librarians = []
+
+    def __len__(self):
+        return len(self.books)
+
+l1 = Library("Animal Farm")
+l2 = Library("Animal Farm", "The Great Gastby")
+print(len(l1))
+print(len(l2))
+
+
 
 
