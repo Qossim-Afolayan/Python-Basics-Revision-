@@ -24,7 +24,7 @@ class Card():
         return F'Card("{self.rank}", "{self.suit}")'
 
 c = Card("Ace", "Spades")
-print(c)
+print(c) #look up order
 print(str(c))
 print(repr(c))
 
@@ -124,5 +124,6 @@ print(boston1)
 print(boston1 == philly)
 print(boston1 == boston2)
 print(boston1 == boston3)
+
 
 
