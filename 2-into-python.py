@@ -64,5 +64,5 @@ print("jelly")
 # print("Peanut butter and", end = " ")
 # print("jelly")
 
-
+print(*range(1, 10), sep = "")
 
