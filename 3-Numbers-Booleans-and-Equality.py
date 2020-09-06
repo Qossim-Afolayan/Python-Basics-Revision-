@@ -138,7 +138,7 @@ chameleon = 5
 print(chameleon)
 
 chameleon = "Some String"
-print(chamelean)
+print(chameleon)
 
 chameleon = 23.5
 print(chameleon)
@@ -146,3 +146,52 @@ print(chameleon)
 chameleon = False
 print(chameleon)
 
+#Multiple Variable Assignment
+a = b = 5
+
+b = 10
+print(b)
+print(a)
+
+a, b = 5, 10
+
+a, b, c = 3, 5, 13
+print(a)
+print(b)
+print(c)
+
+#Augmented Assignment Operator
+a = 1
+a = a + 2
+print(a)
+
+a = 1
+a += 2
+print(a)
+
+word = "race"
+word = word + "car"
+print(word)
+
+word = "race"
+word += "car"
+print(word)
+
+b = 5
+b *= 5
+print(b)
+
+b -= 4
+print(b)
+
+b /= 3
+print(b)
+
+#Collecting User Input with input function
+first_name = input("What's your first name? ")
+print("It's nice to meet you", first_name)
+
+print("Let me help you add two numbers")
+first_num = input("Enter your first number ")
+second_num = input("Enter your second number ")
+print("The sum of the two numbers is", int(first_num) + int(second_num))
