@@ -218,8 +218,22 @@ print(b)
 
 # 37.77 Celsius
 
-print("let me help you convert from Fahrenheit to Celsius!")
-temp_fahr = float(input("Enter a temperature in Fahrenheit "))
-print("The temperature in Celsius is", (temp_fahr-32) * (5 / 9))
+# print("let me help you convert from Fahrenheit to Celsius!")
+# temp_fahr = float(input("Enter a temperature in Fahrenheit "))
+# print("The temperature in Celsius is", (temp_fahr-32) * (5 / 9))
 
+#The NameError, TypeError, ValueError and SyntaxError
+# first_name = "Qossim"
+
+# 50 lines download
+
+# print(firstname)
+
+# print("5" + 3)
+# print(5 + "7")
+
+# int("9.3")
+# print("xyz")
+
+print("Hello)
 
