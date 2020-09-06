@@ -188,10 +188,38 @@ b /= 3
 print(b)
 
 #Collecting User Input with input function
-first_name = input("What's your first name? ")
-print("It's nice to meet you", first_name)
+# first_name = input("What's your first name? ")
+# print("It's nice to meet you", first_name)
 
-print("Let me help you add two numbers")
-first_num = input("Enter your first number ")
-second_num = input("Enter your second number ")
-print("The sum of the two numbers is", int(first_num) + int(second_num))
+# print("Let me help you add two numbers")
+# first_num = input("Enter your first number ")
+# second_num = input("Enter your second number ")
+# print("The sum of the two numbers is", int(first_num) + int(second_num))
+
+#The Challenge
+# Design a Python program that asks the user for a temperature in Fahrenheit.
+
+# The program should convert the temperature to Celsius and print out a message with the value.
+
+# When dealing with any numeric values in this problem, prefer floating point values to integers.
+
+# Fahrenheit to Celsius Formula
+# Subtract 32 from the Fahrenheit temperature.
+
+# Multiply the result by (5 / 9).
+
+# Example:
+
+# 100 Fahrenheit
+
+# 100 - 32 = 68
+
+# 68 multiplied by (5 / 9) is 37.77
+
+# 37.77 Celsius
+
+print("let me help you convert from Fahrenheit to Celsius!")
+temp_fahr = float(input("Enter a temperature in Fahrenheit "))
+print("The temperature in Celsius is", (temp_fahr-32) * (5 / 9))
+
+
