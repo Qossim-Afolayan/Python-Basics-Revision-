@@ -309,3 +309,27 @@ print(n._Nonsense__some_attributes)
 n._Nonsense__some_methods()
 sn._Nonsense__some_methods()
 print(sn._Nonsense__some_attributes)
+
+# Multiple Inheritance
+class FrozenFood():
+    def thaw(self, minutes):
+        print(f"Thawing for {minutes} minutes")
+
+    def store(self):
+        print("Putting in the Refrigerator")
+
+class Desert():
+    def add_weight(self):
+        print("Putting on the pounds!")
+    def store(self):
+        print("Putting in the Freezer!")
+
+class IceCream(FrozenFood, Desert):
+    pass
+
+ic = IceCream()
+ic.add_weight()
+ic.thaw(5)
+ic.store()
+
+print(IceCream.mro())
