@@ -288,3 +288,24 @@ actions = [value.use() for value in dental_health_kit]
 # print(item.use())
 print(actions)
 
+#Name Mangling for Privacy
+class Nonsense():
+    def __init__(self):
+        self.__some_attributes = "Hello"
+
+    def __some_methods(self):
+        print("This is coming from some methos!")
+
+class SpecialNonsense(Nonsense):
+    pass
+
+n = Nonsense()
+sn = SpecialNonsense()
+# print(n.__some_attributes)
+# print(sn.some_attributes)
+# n.__some_methods()
+# sn.__some_methods()
+print(n._Nonsense__some_attributes)
+n._Nonsense__some_methods()
+sn._Nonsense__some_methods()
+print(sn._Nonsense__some_attributes)
