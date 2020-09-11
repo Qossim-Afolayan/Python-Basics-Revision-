@@ -352,3 +352,22 @@ class BarAndGrill(Stakehouse, Bar):
 bag = BarAndGrill()
 bag.make_reservation(2)
 print(BarAndGrill.mro())
+
+#Multiple Inheritance: Diamond-Shaped Inheritance
+class Filmaker():
+    def give_interview(self):
+        print("I love making movies")
+
+class Director(Filmaker):
+    pass
+
+class Screenwriter(Filmaker):
+    def give_interview(self):
+        print("I love writing scripts!")
+
+class JackOfAllTrades(Director, Screenwriter):
+    pass
+
+stallone = JackOfAllTrades()
+stallone.give_interview()
+print(JackOfAllTrades.mro())
