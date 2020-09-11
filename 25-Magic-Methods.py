@@ -90,6 +90,8 @@ class Student():
 
     def __sub__(self, other_student):
         return self.grades - other_student.grades
+    def __mul__(self, other_student):
+        return self.grades * other_student.grades
 
 bob = Student(maths = 90, physics = 90, writing = 90)
 moe = Student(maths = 100, physics = 90, writing = 80)
@@ -100,6 +102,7 @@ print(bob + joe)
 print(bob - joe)
 print(joe <= bob)
 print(bob <= joe)
+print(bob * joe)
 
 #Exercise 1
 class Bustrip():

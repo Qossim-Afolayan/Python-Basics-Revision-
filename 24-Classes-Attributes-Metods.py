@@ -119,7 +119,7 @@ print(book.page_count)
 #         if feet >= 0:
 #             self._inches = feet * 12
     
-#     feet = property(_get_feet, _set_feet)
+    # feet = property(_get_feet, _set_feet)
 
 # h = Height(5)
 # print(h.feet)
