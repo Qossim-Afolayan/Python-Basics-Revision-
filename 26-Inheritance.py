@@ -333,3 +333,22 @@ ic.thaw(5)
 ic.store()
 
 print(IceCream.mro())
+
+#Multiple Inheritance: depth first search and bread first search
+class Restaurant():
+    def make_reservation(self, party_size):
+        print(F"Booked a table for {party_size}")
+
+class Stakehouse(Restaurant):
+    pass
+
+class Bar():
+    def make_reservation(self, party_size):
+        print(F"Booked a Lounge for {party_size}")
+
+class BarAndGrill(Stakehouse, Bar):
+    pass
+
+bag = BarAndGrill()
+bag.make_reservation(2)
+print(BarAndGrill.mro())
