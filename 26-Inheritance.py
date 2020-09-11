@@ -371,3 +371,22 @@ class JackOfAllTrades(Director, Screenwriter):
 stallone = JackOfAllTrades()
 stallone.give_interview()
 print(JackOfAllTrades.mro())
+
+#Exercise
+class A():
+    def dispatch(self):
+        return "apple"
+
+class B(A):
+    pass
+
+class C(A):
+    def dispatch(self):
+        return "banana"
+
+class D(B, C):
+    pass
+
+my_obj = D()
+print(my_obj.dispatch())
+
