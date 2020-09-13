@@ -390,3 +390,78 @@ class D(B, C):
 my_obj = D()
 print(my_obj.dispatch())
 
+#isinstance Function and issubclass Function
+print(type({"a": 1}))
+
+print(isinstance(1, int))
+print(isinstance("string", str))
+print(isinstance([], list))
+print(isinstance((), tuple))
+print(isinstance("", object))
+print(isinstance({}, dict))
+
+print(isinstance(3.4, object))
+print(isinstance(str, object))
+print(isinstance(max, object))
+
+print(isinstance([], (list, tuple)))
+
+class Person():
+    pass
+
+class Superhero(Person):
+    pass
+
+arnold = Person()
+boris = Superhero()
+
+print(isinstance(boris, Superhero))
+print(isinstance(boris, Person))
+print(isinstance(arnold, Person))
+print(isinstance(arnold, Superhero))
+
+print(issubclass(Superhero, Person))
+print(issubclass(Person, Superhero))
+print(issubclass(Superhero, object))
+print(issubclass(Person, object))
+
+#Composition
+class Paper():
+    def __init__(self, text, case):
+        self.text = text
+        self.case = case
+
+class Briefcase():
+    def __init__(self, price):
+        self.price = price
+        self.papers = []
+
+    def add_paper(self, paper):
+        self.papers.append(paper)
+
+    def view_note(self):
+        return [paper.text for paper in self.papers]
+
+class Lawyer():
+    def __init__(self, name, briefcase):
+        self.name = name
+        self.briefcase = briefcase
+
+    def write_note(self, text, case):
+        paper = Paper(text, case)
+        self.briefcase.add_paper(paper)
+
+    def view_note(self):
+        print(self.briefcase.view_note())
+
+cheap_briefcase = Briefcase(price = 19.99)
+vinny = Lawyer("Vincent", briefcase = cheap_briefcase)
+
+vinny.write_note("My client is Innocent!", "AS-2ZKI")
+vinny.write_note("There is no evidence of crime!", "AS-2ZKI")
+vinny.view_note()
+qossim = Paper("My name is Qossim", "12345")
+print(qossim.case)
+
+cheap_briefcase.add_paper(qossim)
+print(cheap_briefcase.papers)
