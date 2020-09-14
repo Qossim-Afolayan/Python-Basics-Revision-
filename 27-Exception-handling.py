@@ -40,3 +40,35 @@ def divide_5_by_number(n):
 print(divide_5_by_number(0))
 print(divide_5_by_number(10))
 print(divide_5_by_number("Nonsense"))
+
+#The raise Keyword
+def add_positive_numbers(a, b):
+    try:
+        if a <= 0 or b <= 0:
+            raise ValueError("One or both of the values is invalid. Both numbers must be positive")
+
+        return a + b
+
+    except ValueError as e:
+        return F"Caught the ValueError: {e}"
+
+print(add_positive_numbers(10, 5))
+print(add_positive_numbers(-2, 3))
+print(add_positive_numbers(2, -3))
+
+#Custom Exceptions (User-Defined Exception)
+class NegativeNumbersError(Exception):
+    """One or more inputs are negative"""
+    pass
+
+def add_positive_numbers(a, b):
+    try:
+        if a <= 0 or b <= 0:
+            raise NegativeNumbersError
+        return a + b
+    except:
+        return "Shame on you, not valid!"
+
+print(add_positive_numbers(10, 5))
+print(add_positive_numbers(-2, 3))
+print(add_positive_numbers(2, -3))
