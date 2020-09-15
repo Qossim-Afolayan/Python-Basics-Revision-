@@ -140,6 +140,31 @@ today = date.today()
 print(today)
 print(type(today))
 
+from datetime import time
+
+start = time()
+print(start)
+print(type(start))
+print(start.hour)
+print(start.minute)
+print(start.second)
+
+print(time(6))
+print(time(hour = 5))
+print(time(hour = 10))
+
+print(time(12, 25))
+print(time(hour = 12, minute = 25))
+
+#11:34:22PM
+print(time(23, 44, 56))
+evening = time(hour = 23, minute = 44, second = 26)
+print(evening)
+print(evening.hour)
+print(evening.minute)
+print(evening.second)
+
+# time(27)
 
 
 
