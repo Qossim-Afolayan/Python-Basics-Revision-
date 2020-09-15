@@ -112,11 +112,34 @@ except NameError:
     print("Some variable not defined")
 
 else:
-    print("This will print if there is no error pin the try block")
+    print("This will print if there is no error in the try block")
 
 finally:
-    print("this will print with or without errors")
+    print("this will print with or without errors i the try block")
     print("Closing file ...")
+
+from datetime import date
+
+birthday = date(1991, 4, 12)
+print(birthday)
+print(type(birthday))
+
+moon_landing = date(year = 1969, month = 7, day = 20)
+print(moon_landing)
+
+# date(2025, 15, 10)
+# date(2020, 1, 35)
+
+print(birthday.year)
+print(birthday.month)
+print(birthday.day)
+
+# birthday.year = 2020
+
+today = date.today()
+print(today)
+print(type(today))
+
 
 
 
