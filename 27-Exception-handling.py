@@ -208,6 +208,21 @@ print(same_time_in_january)
 start_of_january_1999 = today.replace(year = 1999, month = 1, day = 1)
 print(start_of_january_1999)
 
+#The datetime object: The strftime Method
+today = datetime.today()
+
+print(today.strftime("%m"))
+print(today.strftime("%m %d"))
+print(today.strftime("%m/%d/%Y"))
+print(today.strftime("%m-%d-%Y"))
+
+print(today.strftime("%Y-%m-%d"))
+print(today.strftime("%y-%m-%d"))
+
+print(today.strftime("%A"))
+print(today.strftime("%B"))
+
+
 
 
 
