@@ -72,3 +72,53 @@ def add_positive_numbers(a, b):
 print(add_positive_numbers(10, 5))
 print(add_positive_numbers(-2, 3))
 print(add_positive_numbers(2, -3))
+
+#Exception Inheritance Hierachies
+class Mistake(Exception):
+    pass
+
+class StupidMistake(Mistake):
+    pass
+
+class SillyMistake(Mistake):
+    pass
+
+try:
+    raise StupidMistake("Extra stupid mistake")
+except StupidMistake as e:
+    print(F"Caught an error: {e}")
+
+try:
+    raise SillyMistake("super silly mistake")
+except SillyMistake as e:
+    print(F"Caught an error: {e}")
+
+try:
+    raise StupidMistake("Extra stupid mistake")
+except Mistake as e:
+    print(F"Caught an error: {e}")
+
+try:
+    raise SillyMistake("super silly mistake")
+except Mistake as e:
+    print(F"Caught an error: {e}")
+
+#The else and finally Block
+x = 10
+
+try:
+    print(y + 4)
+except NameError:
+    print("Some variable not defined")
+
+else:
+    print("This will print if there is no error pin the try block")
+
+finally:
+    print("this will print with or without errors")
+    print("Closing file ...")
+
+
+
+
+
