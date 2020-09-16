@@ -221,8 +221,74 @@ print(today.strftime("%y-%m-%d"))
 
 print(today.strftime("%A"))
 print(today.strftime("%B"))
+# Given the datetime object below (November 17th, 2000 at 6:00:00AM), 
+# invoke the strftime to method produce the following result:
 
+# The day of the week, abbreviated (i.e. "Fri" )
 
+# today = datetime(2000, 11, 17, 6, 0, 0)
+
+today = datetime(2000, 11, 17, 6, 0, 0)
+print(today.strftime("%a")) # Fri
+# Given the datetime object below (November 17th, 2000 at 6:00:00AM), invoke the strftime to method produce the following result:
+
+# The full month name, the zero-padded day, the four-digit year. The day and year should be separated by a comma and a space (i.e. "November 17, 2000")
+
+# today = datetime(2000, 11, 17, 6, 0, 0)
+
+# today = datetime(2000, 11, 17, 6, 0, 0)
+print(today.strftime("%B %d, %Y")) # November 17, 2000
+# Given the datetime object below (November 17th, 2000 at 6:00:00AM), invoke the strftime to method produce the following result:
+
+# The day of the year (i.e. "273")
+
+# today = datetime(2000, 11, 17, 6, 0, 0)
+
+# today = datetime(2000, 11, 17, 6, 0, 0)
+print(today.strftime("%j")) # 322
+# Given the datetime object below (November 17th, 2000 at 6:00:00AM), invoke the strftime to method produce the following result:
+
+# The week number of the year (i.e. "46")
+
+# today = datetime(2000, 11, 17, 6, 0, 0)
+
+# today = datetime(2000, 11, 17, 6, 0, 0)
+print(today.strftime("%W")) # 46
+# Given the datetime object below (November 17th, 2000 at 6:00:00AM), invoke the strftime to method produce the following result:
+
+# The time with a zero-padded hour, zero-padded minute, zero-padded second and AM / PM designation (i.e. "06:00:00 AM")
+
+# today = datetime(2000, 11, 17, 6, 0, 0)
+
+today = datetime(2000, 11, 17, 6, 0, 0)
+print(today.strftime("%H:%M:%S%p")) # 06:00:00AM
+#Exercise
+# Define a one_from_two function that accepts a date object and a time object
+# It should return a datetime object consisting of 
+#     - the year, month and day from the date object 
+#     - the hour, minutes, and seconds from the time object
+#
+# EXAMPLE:
+#
+# from datetime import date, time, datetime
+# some_date = date(2002, 2, 22)
+# some_time = time(9, 45, 23)
+# one_from_two(some_date, some_time) => datetime object representing 2002-02-22 09:45:23
+
+def one_from_two(date_ob, time_ob):
+    year = date_ob.year
+    month = date_ob.month
+    day = date_ob.day
+
+    hour = time_ob.hour
+    minute = time_ob.minute
+    second = time_ob.second
+
+    return datetime(year, month, day, hour, minute, second)
+
+some_date = date(2002, 2, 22)
+some_time = time(9, 45, 23)
+print(one_from_two(some_date, some_time)) #=> datetime object representing 2002-02-22 09:45:23
 
 
 
